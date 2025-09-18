@@ -1,0 +1,70 @@
+/* Sky background */
+.sky {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, #a0d8ff, #ffe6f0);
+  overflow: hidden;
+}
+
+/* Clouds */
+.cloud {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatCloud 60s linear infinite;
+}
+
+.cloud1 {
+  width: 150px; height: 60px;
+  top: 50px; left: -200px;
+}
+.cloud2 {
+  width: 100px; height: 40px;
+  top: 150px; left: -150px;
+}
+
+@keyframes floatCloud {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(120vw); }
+}
+
+/* Stars */
+.star {
+  position: absolute;
+  width: 4px; height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.9;
+  animation: twinkle 2s infinite alternate;
+}
+
+.star1 { top: 30px; left: 60px; animation-delay: 0s; }
+.star2 { top: 100px; left: 200px; animation-delay: 0.5s; }
+.star3 { top: 50px; left: 300px; animation-delay: 1s; }
+
+@keyframes twinkle {
+  0% { opacity: 0.2; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Sparkles */
+.sparkle {
+  position: absolute;
+  width: 6px; height: 6px;
+  background: radial-gradient(circle, #fff, transparent);
+  border-radius: 50%;
+  animation: sparkleMove 5s linear infinite;
+}
+
+.sparkle1 { top: 120px; left: 80px; }
+.sparkle2 { top: 180px; left: 250px; }
+
+@keyframes sparkleMove {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  50% { transform: translateY(-20px) scale(1.3); opacity: 0.5; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
